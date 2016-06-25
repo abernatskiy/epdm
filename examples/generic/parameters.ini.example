@@ -1,0 +1,10 @@
+[kinetic model]
+monomerBirthH = 5.0
+monomerBirthP = 5.0
+growth = 1.0
+unfoldedDegradation = 0.01       ; degradation rate
+unfolding = 10.0
+foldedDegradation = 0.01         ; degradation rate for folded polymers
+hydrophobicEnergy = -1.5
+maxLength = 20                  ; maximum length of the polymers for which folded conformations are known and present in the library (nativeList.txt)
+hydrolysisRate = 0.1            ; rate of hydrolysis
