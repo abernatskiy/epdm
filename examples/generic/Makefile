@@ -1,12 +1,15 @@
+# Path to the epdm directory - change this if your model is outside of the examples folder
+epdmDir         = ../..
+
+# Name of the executable
+epdmExecName   = epdm
+
 # List of objects specific to this model - append your objects here
 modelObjects    = model.o main.o
 
-# Path to the epdm directory - change this if your model is outside of the examples folder
-epdmDir    = ../..
-
 # Loading list of library objects and prepending the epdm directory to each entry
 include ${epdmDir}/Makefile.lib
-libraryObjects = $(foreach object, ${localLibraryObjects}, ${epdmDir}/${object})
+libraryObjects  = $(foreach object, ${localLibraryObjects}, ${epdmDir}/${object})
 
 .SUFFIXES       = .cpp .o
 CC              = g++
@@ -17,10 +20,10 @@ CPPFLAGS        = ${CFLAGS}
 .cpp.o:
 	${CC} -o $@ -c ${CPPFLAGS} $<
 
-pdmmod: ${libraryObjects} ${modelObjects}
+${epdmExecName}: ${libraryObjects} ${modelObjects}
 	${CC} ${LDFLAGS} -o $@ $^
 
 clean:
-	${RM} ${libraryObjects} ${modelObjects} pdmmod
+	${RM} ${libraryObjects} ${modelObjects} ${epdmExecName}
 
-all: pdmmod
+all: ${epdmExecName}

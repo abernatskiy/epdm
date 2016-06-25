@@ -20,14 +20,11 @@ public:
     Specie(std::string id);
     ~Specie();
 
-    //attributes
-    std::string m_id;
+    std::string m_id; // must be unique for each Specie object
 
-    //methods
-    std::list<Reaction> reactions(Specie specie);
+    std::list<Reaction> reactions(Specie other); // required method: must return a list of reactions between two Species (this and other)
 
-    // overloading <<
-    friend std::ostream& operator<<(std::ostream& os, const Specie& sp);
+    friend std::ostream& operator<<(std::ostream& os, const Specie& sp); // required friend function
 };
 
 #endif // __SPECIE_H

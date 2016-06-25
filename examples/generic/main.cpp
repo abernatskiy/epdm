@@ -21,8 +21,8 @@ std::map<std::string,Parameter> configDict;
 
 void printUsage(){
     std::cout << "Usage:" << std::endl;
-    std::cout << "  pdmmod simulateTime <totalTime> <timeBetweenRecords> <outputFileName> [<options>]" << std::endl;
-    std::cout << "  pdmmod simulateReactions <numberOfReactions> <recordingPeriod> <outputFileName> [<options>]" << std::endl;
+    std::cout << "  epdm simulateTime <totalTime> <timeBetweenRecords> <outputFileName> [<options>]" << std::endl;
+    std::cout << "  epdm simulateReactions <numberOfReactions> <recordingPeriod> <outputFileName> [<options>]" << std::endl;
     std::cout << "Possible options:" << std::endl;
     std::cout << "  -c <parametersFileName> -i <initialPopulationFileName> -r <randomSeed>" << std::endl;
     std::cout << "totalTime=0 causes the program to run the simulation until it runs out of possible reactions or indefinitely" << std::endl;
