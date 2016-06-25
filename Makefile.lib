@@ -1,0 +1,5 @@
+pdmmodObjects       = reaction.o relation.o population.o randomGenerator.o totalPopulation.o
+ioObjects           = dataLogger.o parametersLoader.o parameter.o
+inihObjects         = inih/ini.o
+localLibraryObjects = ${pdmmodObjects} ${ioObjects} ${inihObjects}
+
