@@ -1,4 +1,4 @@
-# Path to the epdm directory - change this if your model is outside of the examples folder
+# Path to the epdm directory - change this if your model folder is not at examples/
 epdmDir         = ../..
 
 # Name of the executable
