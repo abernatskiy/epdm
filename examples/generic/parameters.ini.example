@@ -1,4 +1,5 @@
-[kinetic model] ; required section
-monomerBirthH = 5.0 ; parameters used in class Specie (see model.h/.cpp) ...
-monomerBirthP = 5.0
-growth = 1.0
+[kinetic model]        ; Parameters from this section will be available via the global configuration dictionary configDict
+exampleInt = 2         ; Parameters containing digits only are detected as ints. Conversion function: getInt()
+exampleFloat = 5.0     ; Digits plus a dot signify float. DO NOT omit the dot! Conversion function: getFloat()
+exampleBool = true     ; "true" or "false" are recognized as boolean values. Conversion function: getBool()
+exampleString = fgsfds ; Any value not recognized as int, float or bool is kept intact as a string. Conversion function: getString()

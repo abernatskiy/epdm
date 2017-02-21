@@ -31,14 +31,14 @@ std::list<Reaction> Specie::reactions(Specie other)
     //    binary reactions. By convention, void species have std::string("") for
     //    id and zero stoichiometry in all reactions.
     //
-    //  - Reaction objects are constructed from four arguments: id of the first
+    //  - Reaction objects are constructed from five arguments: id of the first
     //    reactant, its stoichiometry, id of the second reactant, stoichiometry
-    //    of the second reactant. Once a Reaction is constructed, you can add
-    //    products by calling the addProducts() method which takes id of the
-    //    product and its stoichiometry. For example, reaction A + B -> AB can
-    //    be written as
+    //    of the second reactant and rate. Once a Reaction is constructed, you
+    //    can addproducts by calling the addProducts() method which takes id of
+    //    the product and its stoichiometry. For example, reaction A + B -> AB
+    //    with rate R is defined as
     //
-    //      Reaction ab("A", 1, "B", 1);
+    //      Reaction ab("A", 1, "B", 1, R);
     //      ab.addProduct("AB", 1);
     //
 		//  - For convenience of tuning the model's parameters, a global
