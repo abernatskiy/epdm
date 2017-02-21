@@ -15,17 +15,17 @@
 class Specie
 {
 public:
-    Specie(){}; // do not modify
-    ~Specie(){}; // do not modify
+    Specie(){}; // do not modify: default constructor is required
+    ~Specie(){}; // do not modify: default destructor is required
 
     std::string modelName; // name of the model to use in logs, messages and trajectory output comments
-    Specie(std::string id); // this constructor must ensure that the object is defined by id uniquely and that the id is saved at m_id
-
     std::string m_id; // must be unique for each Specie object
+
+    Specie(std::string id); // this constructor must ensure that the object is defined by id uniquely and that the id is saved at m_id
 
     std::list<Reaction> reactions(Specie other); // must return a list of reactions between two Species (this and other); must be symmetric (s1.reactions(s2) == s2.reactions(s1))
 
-    friend std::ostream& operator<<(std::ostream& os, const Specie& sp){os << sp.m_id; return os;}; // used in logs and messages
+    friend std::ostream& operator<<(std::ostream& os, const Specie& sp){os << sp.m_id; return os;}; // used in logs and messages; feel free to redefine if appropriate
 
 private:
     // feel free to declare any private methods here

@@ -8,6 +8,10 @@
 #include <cstdlib>
 #include "types.h"
 
+// TODO: Turns out, stoichiometric coefficients are defined to be negative for reagents!
+// https://en.wikipedia.org/wiki/Stoichiometry#Stoichiometric_coefficient
+// This calls for a slight rework of an interface and of comments.
+
 /* Class describing a chemical reaction.
  * It stores the involved species in form of their IDs - unique identifier strings.
  * All data on which the chemical behavior of specie depends (such as its activation

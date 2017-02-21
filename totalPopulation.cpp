@@ -46,6 +46,7 @@ int TotalPopulation::stepSimulation(){
         std::tie (specieId, specieSto) = *itSpRec;
 
         // For every specie, we're interested in getting an iterator to its population
+        // TODO Possible optimization: consider the average case of going through the populations once, dequeueing the species as we go.
         auto itPop = findPopulation(specieId);
 
         // If such population alrady exists
