@@ -76,6 +76,8 @@ int TotalPopulation::stepSimulation(){
     // Recompute m_a
     computeTotalPropensity();
 
+//		std::cout << "Population state after the step: " << (*this) << "\n";
+
     if(m_a == 0.f)
         //break;
         return 1;
@@ -165,10 +167,13 @@ Reaction TotalPopulation::sampleReaction(){
         {
             Reaction candidateReaction = pop->sampleReaction( juice - prevSumKsi );
             if(candidateReaction.isValid())
+						{
+//                std::cout << "Sampled reaction " << candidateReaction << "\n";
                 return candidateReaction;
+            }
             else
             {
-//                std::cout << "WARNING: Sampled invalid reaction, perhaps due to the numerical error. Resampling recursively.\n";
+                std::cout << "WARNING: Sampled invalid reaction, perhaps due to the numerical error. Resampling recursively.\n";
                 return sampleReaction();
             }
         }
